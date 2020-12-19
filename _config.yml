@@ -20,7 +20,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   His research interests are in Computer Vision, Deep Learning. His research interests focus on making AI more accurate, better understand human intentions, tendencies, and contexts.
   His main focus lies on developing novel approaches for 3D person reconstruction and 3D pose estimation.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://ameyad.xyz" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://deshraj.xyz" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ameyad1995
 github_username:  nudlesoup
 
