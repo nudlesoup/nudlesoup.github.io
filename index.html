@@ -1089,6 +1089,52 @@
             .impact-badge { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
             .hero .description { font-size: 1rem; }
         }
+
+        /* --- New Animation Styles --- */
+        
+        /* Smooth Scroll (Lenis) removed */
+
+        /* Background Canvas */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            pointer-events: none;
+            opacity: 0.6; /* Subtle blend */
+        }
+
+        /* Staggered Reveal System */
+        /* Override default section animation to be subtler/just opacity if we use inner staggering */
+        section {
+            /* Keep existing transition props but modify if needed */
+            /* We will let specific elements handle the movement */
+        }
+
+        .reveal-group .reveal-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-group.visible .reveal-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger delays (up to 10 items) */
+        .reveal-group.visible .reveal-item:nth-child(1) { transition-delay: 0s; }
+        .reveal-group.visible .reveal-item:nth-child(2) { transition-delay: 0.05s; }
+        .reveal-group.visible .reveal-item:nth-child(3) { transition-delay: 0.1s; }
+        .reveal-group.visible .reveal-item:nth-child(4) { transition-delay: 0.15s; }
+        .reveal-group.visible .reveal-item:nth-child(5) { transition-delay: 0.2s; }
+        .reveal-group.visible .reveal-item:nth-child(6) { transition-delay: 0.25s; }
+        .reveal-group.visible .reveal-item:nth-child(7) { transition-delay: 0.3s; }
+        .reveal-group.visible .reveal-item:nth-child(8) { transition-delay: 0.35s; }
+        .reveal-group.visible .reveal-item:nth-child(9) { transition-delay: 0.4s; }
+        .reveal-group.visible .reveal-item:nth-child(10) { transition-delay: 0.45s; }
     </style>
 </head>
 <body>
@@ -1144,20 +1190,20 @@
                 </a>
             </div>
             
-            <div class="impact-stats">
-                <div class="stat-card">
+            <div class="impact-stats reveal-group">
+                <div class="stat-card reveal-item">
                     <div class="number">2K+</div>
                     <div class="label">Devices Deployed</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card reveal-item">
                     <div class="number">>99%</div>
                     <div class="label">Model Accuracy</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card reveal-item">
                     <div class="number">40%</div>
                     <div class="label">Faster Inference</div>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card reveal-item">
                     <div class="number">25%</div>
                     <div class="label">↑ Throughput</div>
                 </div>
@@ -1221,11 +1267,11 @@
             </div>
         </section>
         
-        <section id="experience">
+        <section id="experience" class="reveal-group">
             <div class="section-label">// 02_EXPERIENCE</div>
             <h2>WHERE I'VE BUILT</h2>
             
-            <div class="timeline-item">
+            <div class="timeline-item reveal-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-header">
                     <div>
@@ -1274,7 +1320,7 @@
                 </div>
             </div>
             
-            <div class="timeline-item">
+            <div class="timeline-item reveal-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-header">
                     <div>
@@ -1320,7 +1366,7 @@
                 </div>
             </div>
             
-            <div class="timeline-item">
+            <div class="timeline-item reveal-item">
                 <div class="timeline-dot"></div>
                 <div class="timeline-header">
                     <div>
@@ -1362,8 +1408,8 @@
             <div class="section-label">// 03_PROJECTS</div>
             <h2>SELECTED WORK</h2>
             
-            <div class="projects-grid">
-                <div class="project-card">
+            <div class="projects-grid reveal-group">
+                <div class="project-card reveal-item">
                     <div class="project-image">
                         <img src="./static/img/yolov8.gif" alt="YOLOv8 Detection - Real-time pharmacy automation" loading="lazy">
                     </div>
@@ -1386,7 +1432,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card reveal-item">
                     <div class="project-image">
                         <img src="./static/img/3DPose.gif" alt="3D Pose Visualization - Egocentric human pose estimation" loading="lazy">
                     </div>
@@ -1410,7 +1456,7 @@
                     </div>
                 </div>
                 
-                <div class="project-card">
+                <div class="project-card reveal-item">
                     <div class="project-image">
                         <img src="./static/img/product-recongition.gif" alt="Retail Detection Output - Product recognition" loading="lazy">
                     </div>
@@ -1439,8 +1485,8 @@
             <div class="section-label">// 04_TECHNICAL_SKILLS</div>
             <h2>WHAT I USE</h2>
             
-            <div class="skills-grid">
-                <div class="skill-category">
+            <div class="skills-grid reveal-group">
+                <div class="skill-category reveal-item">
                     <h3>ML & Computer Vision</h3>
                     <ul class="skill-list">
                         <li>Object Detection & Tracking</li>
@@ -1452,7 +1498,7 @@
                     </ul>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-category reveal-item">
                     <h3>Frameworks & Tools</h3>
                     <ul class="skill-list">
                         <li>PyTorch (Primary)</li>
@@ -1464,7 +1510,7 @@
                     </ul>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-category reveal-item">
                     <h3>Production & MLOps</h3>
                     <ul class="skill-list">
                         <li>Model Quantization (FP16/INT8)</li>
@@ -1478,11 +1524,11 @@
             </div>
         </section>
         
-        <section id="education">
+        <section id="education" class="reveal-group">
             <div class="section-label">// 05_EDUCATION</div>
             <h2>ACADEMIC BACKGROUND</h2>
             
-            <div class="education-card">
+            <div class="education-card reveal-item">
                 <div class="edu-content">
                     <img src="static/img/asu-logo.png" alt="Arizona State University Logo" class="edu-logo" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                     <div style="display: none; width: 80px; height: 80px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); border-radius: 8px; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; color: var(--accent); font-size: 0.75rem; text-align: center; padding: 0.5rem;">ASU<br>LOGO</div>
@@ -1497,7 +1543,7 @@
                 </div>
             </div>
             
-            <div class="education-card">
+            <div class="education-card reveal-item">
                 <div class="edu-content">
                     <img src="static/img/bits.png" alt="BITS Pilani Logo" class="edu-logo" loading="lazy">
                     <div class="edu-info">
@@ -1516,6 +1562,9 @@
     <!-- Back to Top Button -->
     <button class="back-to-top" aria-label="Back to top">↑</button>
     
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
     <footer>
         <p>&copy; 2025 Ameya Dhamanaskar</p>
         <p><a href="mailto:adhamana@asu.edu">adhamana@asu.edu</a> • (949) 561-2038</p>
@@ -1525,7 +1574,78 @@
         </p>
     </footer>
     
+    
+    <!-- Lenis Smooth Scroll Removed -->
+    
     <script>
+        // Smooth Scroll Setup (Lenis) removed as per user request
+
+
+        // Particle System
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2;
+                this.alpha = Math.random() * 0.5 + 0.1;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0) this.x = width;
+                if (this.x > width) this.x = 0;
+                if (this.y < 0) this.y = height;
+                if (this.y > height) this.y = 0;
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.floor(window.innerWidth * 0.1); // Responsive count
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+
+        window.addEventListener('resize', () => {
+            resize();
+            initParticles();
+        });
+
+        resize();
+        initParticles();
+        animateParticles();
+
         // Mobile Menu Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navMenu = document.querySelector('nav ul');
@@ -1596,7 +1716,7 @@
         // Intersection Observer for scroll animations
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: '0px 0px -20px 0px'
         };
         
         const observer = new IntersectionObserver((entries) => {
@@ -1611,6 +1731,11 @@
             if (!section.classList.contains('hero')) {
                 observer.observe(section);
             }
+        });
+
+        // Observe Reveal Groups
+        document.querySelectorAll('.reveal-group').forEach(group => {
+            observer.observe(group);
         });
         
         // Rotating tagline with instant transitions
